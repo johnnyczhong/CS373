@@ -47,7 +47,9 @@ The security community has also devised a few terms in their work with malware. 
 Standards in naming are used to categorize malware. A particular convention is to categorize by type (virus, trojan, etc.), then platform (linux, win32, etc.), then family of malware (malware that displays similar behavior, imphash, etc.), then a variant name using letters as a designation. This naming convention allows anti-malware software and professionals to quickly understand its high level characteristics (how does it spread, what does it do). 
 
 
-Handling malware requires special considerations. (1.4.5:58)
+Handling malware requires special considerations. The malware files are zipped and encrypted with the password "infected". The sample extension is also renamed, either changing the extension or adding a hash. Isolation of your machine is also necessary.
+
+# 1.4.7:54
 
 ### Useful Tools
 - Virustotal - a site where users can upload an md5 hash/file/url to search against a database maintained by many vendors to determine the type of malware they're dealing with.
