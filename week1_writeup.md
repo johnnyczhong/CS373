@@ -42,6 +42,7 @@ The security community has also devised a few terms in their work with malware. 
 8. imphash - import hash, a hash calculated for viruses; this can be used to determine if the virus is part of the same "family" of viruses; if they use a similar import hash
 9. dropper - the file that is used by a trojan
 10. Static Analysis - viewing the contents of a file, usually through a hex editor or some other text editor.
+11. packer - compressed compiled code
 
 
 ### Practices
@@ -53,14 +54,17 @@ Handling malware requires special considerations. The malware files are zipped a
 
 When handling malware, there may be instances where malware is able to detect if it is operating in a virtual environment. This can be mitigated in a few ways: by not loading certain tools the malware is lookng for, loading a VM with registry values identical to a physical machine, or running code that responds to malware attempts to determine its environment.
 
+### Tools of the Trade
 
-Research is commonly conducted via Tor, for anonymity. 
 
 ### Useful Tools
 - Virustotal - a site where users can upload an md5 hash/file/url to search against a database maintained by many vendors to determine the type of malware they're dealing with.
 - Malwr - a sample is provided to the site, an isolated environment evaluates the malware, and reports back behavior
 - Wepawet - used for analysis of obfuscated java, pdf, files for decryption.
 - Comodo - document analyzer.
+- Research is commonly conducted via Tor, for anonymity.
+- IDA Pro - analyzes source code of malware, makes it easy for an analyst to walk through the code.
+- FileInsight - has the ability to dump strings from hexcode.
 
 
 ### Recent News
@@ -79,3 +83,6 @@ This can be gained through OSINTs (open-source intelligence). Job postings are u
 Weaponization refers to the use of the information gained through reconnaissance to break in. Delivery refers to the method through which the malware is provided. Exploitation refers to the exploit itself. Installation refers to the placing the malware onto the device. Command and control refers to the use of the connection established. Actions on objectives is carrying out the goal.
 
 
+### Interesting tidbits
+- Much malware is written in Delphi. (autoIT?)
+- C++, Java, .net is common as well.
