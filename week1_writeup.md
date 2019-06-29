@@ -41,18 +41,41 @@ The security community has also devised a few terms in their work with malware. 
 7. honeypot - a vulnerable system that intentionally gets infected with viruses for evaluation
 8. imphash - import hash, a hash calculated for viruses; this can be used to determine if the virus is part of the same "family" of viruses; if they use a similar import hash
 9. dropper - the file that is used by a trojan
+10. Static Analysis - viewing the contents of a file, usually through a hex editor or some other text editor.
 
 
 ### Practices
 Standards in naming are used to categorize malware. A particular convention is to categorize by type (virus, trojan, etc.), then platform (linux, win32, etc.), then family of malware (malware that displays similar behavior, imphash, etc.), then a variant name using letters as a designation. This naming convention allows anti-malware software and professionals to quickly understand its high level characteristics (how does it spread, what does it do). 
 
 
-Handling malware requires special considerations. The malware files are zipped and encrypted with the password "infected". The sample extension is also renamed, either changing the extension or adding a hash. Isolation of your machine is also necessary.
+Handling malware requires special considerations. The malware files are zipped and encrypted with the password "infected". The sample extension is also renamed, either changing the extension or adding a hash. Isolation of your machine is also necessary. Headers are used to identify file types for analysis. These are all practices that lead to the use of replication, the practice of determining malware behavior. The actions are recorded to understand the malware behavior. The state of the system is analyzed in order to determine before and after effects. 
 
-# 1.4.7:54
+
+When handling malware, there may be instances where malware is able to detect if it is operating in a virtual environment. This can be mitigated in a few ways: by not loading certain tools the malware is lookng for, loading a VM with registry values identical to a physical machine, or running code that responds to malware attempts to determine its environment.
+
+
+Research is commonly conducted via Tor, for anonymity. 
 
 ### Useful Tools
 - Virustotal - a site where users can upload an md5 hash/file/url to search against a database maintained by many vendors to determine the type of malware they're dealing with.
 - Malwr - a sample is provided to the site, an isolated environment evaluates the malware, and reports back behavior
 - Wepawet - used for analysis of obfuscated java, pdf, files for decryption.
 - Comodo - document analyzer.
+
+
+### Recent News
+Attacks on corporations has increased in the last few years, these being referred to as "Advanced Persistent Threats". The term comes from the breakdown of each individual word. Advanced indicates that the attacker is knowledgeable. Persistent indicates the attackers are hunting and intent on finding particular information. Threat refers to the level of organization of the attacking group. 
+
+Advanced Persistent Threats - APTs - have several characteristics:
+1. Actors - terrorists, activists, state-sponsored government, business competitors, insiders
+2. Motives - financial, information, revenge, ideology, excitement
+3. Targets - companies, governments, individuals
+4. Goals - create backdoors stealthily, steal data, monitor data, leave undetected
+
+Other methods to gather information is to target subcontracting companies, as they will typically be less secure. A possible analog of this is to gain access to accounts or machines with less access/privileges and slowly gain more access.
+
+This can be gained through OSINTs (open-source intelligence). Job postings are useful for this, as they reveal data on what technologies are in use at the targeted company. Company websites may also provide information via document metadata, as this information is posted when a document is posted by the company. This represents the first step of the "APT-Kill-Chain", a process that describes the typical methods through which APTs are conducted.
+
+Weaponization refers to the use of the information gained through reconnaissance to break in. Delivery refers to the method through which the malware is provided. Exploitation refers to the exploit itself. Installation refers to the placing the malware onto the device. Command and control refers to the use of the connection established. Actions on objectives is carrying out the goal.
+
+
